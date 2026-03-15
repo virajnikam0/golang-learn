@@ -114,13 +114,22 @@ func main() {
 	// fmt.Println(age)
 
 
-	orderStatus(Confirmerd)
-	orderStatus(Created)
-	orderStatus(Delivered)
+	// orderStatus(Confirmerd)
+	// orderStatus(Created)
+	// orderStatus(Delivered)
 
+	var PI float32 = 323.2
 
+	switch(PI){
+		case 12.1,323.2:
+			fmt.Println("1case")
+		case 3.14:
+			fmt.Println("2case")
+		default:
+			fmt.Println("default condition")
+	}
 
-
+	
 	
 }
 
