@@ -80,6 +80,16 @@ func orderStatus(status Status){
 }
 
 
+func x(nums [3]int) [3]int{
+	y := 0
+	i := len(nums)-1
+	for 0 <= i{
+		y+=nums[i]
+		i--
+	} 
+	fmt.Println(y)
+	return nums
+}
 
 
 
@@ -118,18 +128,20 @@ func main() {
 	// orderStatus(Created)
 	// orderStatus(Delivered)
 
-	var PI float32 = 323.2
+	// var PI float32 = 323.2
 
-	switch(PI){
-		case 12.1,323.2:
-			fmt.Println("1case")
-		case 3.14:
-			fmt.Println("2case")
-		default:
-			fmt.Println("default condition")
-	}
+	// switch(PI){
+	// 	case 12.1,323.2:
+	// 		fmt.Println("1case")
+	// 	case 3.14:
+	// 		fmt.Println("2case")
+	// 	default:
+	// 		fmt.Println("default condition")
+	// }
 
-	
+
+	y := [3]int{10,10,10}
+	x(y)
 	
 }
 
