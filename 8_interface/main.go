@@ -2,39 +2,49 @@ package main
 
 import "fmt"
 
-// interface  - what object have and can be do by other after implementation of interface
+// interface => 2 childs =>
 
-type RazorPay struct {
+type Parent interface {
+	height() string
+	color() string
 }
 
-func (r *RazorPay) razorPayment(amount float32) float32 {
-	fmt.Println("payment is done with razor pay", amount)
-	return amount + 10.5
+type Child1 struct {
+	cname string
+}
+type Child2 struct {
+	cname string
 }
 
-type Stripe struct {
+func (C *Child1) height() string {
+	return "child 1 height"
 }
 
-func (s *Stripe) stripePayment(amount float32) float32 {
-	fmt.Println("payment is done with stripe pay", amount)
-	return amount + 10.5
+func (C *Child1) color() string {
+	return "child 1 color"
+}
+func (C *Child2) height() string {
+	return "child 2 height"
 }
 
-type Payment struct {
-	amount float32
-}
-
-func (p *Payment) makePayment(amount float32) float32 {
-	// pay := RazorPay{}
-	pay := Stripe{}
-	taxAmount := pay.stripePayment(amount)
-
-	return taxAmount
-
+func (C *Child2) color() string {
+	return "child 2 color"
 }
 
 func main() {
-	payment_1 := Payment{}
-	totalAmount := payment_1.makePayment(100)
-	fmt.Println(totalAmount)
+
+	// interface var
+	var p1 Parent
+
+	p1 = &Child1{
+		cname: "john wick",
+	}
+
+	fmt.Println(p1.color())
+
+	p1 = &Child2{
+		cname: "Ken thomson",
+	}
+	fmt.Println(p1.color())
+
 }
