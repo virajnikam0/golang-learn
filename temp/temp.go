@@ -1,22 +1,31 @@
 package main
 
 import (
+	// "dsa-practice/temp/abx"
+	// goroutines "dsa-practice/temp/go-routines"
 	"fmt"
-	"log"
+	"sync"
+	// "time"
+	// "log"
 	// "strconv"
 	// "strings"
 	// "slices"
 )
 
+var wg sync.WaitGroup
+
 func String() {
 	fmt.Println("hello there")
 }
 
+func worker(param int) {
+	defer wg.Done()
+	fmt.Println(param)
+}
+
 func main() {
-	a := 1
-	if a == 1 {
-		log.Fatal("yes")
-	} else {
-		log.Fatal("no")
-	}
+	var x int
+	fmt.Scan(&x)
+	fmt.Println(x)
+
 }
