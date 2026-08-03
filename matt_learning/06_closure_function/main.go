@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func h1() func() int {
 	a, b := 0, 1
@@ -18,5 +21,6 @@ func main() {
 	for x := rtValue(); x < 100; x = rtValue() {
 		fmt.Println(x)
 	}
+	sort.Slice()
 
 }
